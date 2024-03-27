@@ -1,158 +1,154 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+section{
+    background: #ebebeb;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
-
-/* MENU */
-.slider{
-    margin: 0 auto;
-    width: 100%;
-    overflow: hidden;
-}
-
-.slides{
-    max-width:100%; 
-    width: auto;
-    height: auto;
+.container {
     display: flex;
-}
-
-.slides input{
-    display: none;
-}
-
-.slide{
-    width: 100%;
-    position: relative;
-    height: 650px;
-}
-.slide img{ 
-    max-width:1440px;
-    width: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center; /* Alinha os pacotes horizontalmente ao centro */
+    align-items: center; 
     
 }
-.manual-navigation{
-    position: absolute;
-    width: 100%;
-    display: flex;
-    margin-top: -40px;
-    justify-content: center;
-}
 
-.manual-btn{
-   
-    background: rgba(255, 255, 255, 0.35);
-    padding: 7px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: 1s;
-    z-index: 2;
-}
-
-.manual-btn:not(:last-child){
-    margin-right: 20px;
-}
-.manual-btn:hover{
-    background: #fff;
-    color: #000;
-}
-
-#radio1:checked ~ .first{
-    margin-left: 0;
-}
-
-#radio2:checked ~ .first{
-    margin-left: -100%;
-}
-
-#radio3:checked ~ .first{
-    margin-left: -200%;
-}
-
-#radio4:checked ~ .first{
-    margin-left: -300%;
-}
-
-#radio5:checked ~ .first{
-    margin-left: -400%;
-}
-
-.navigation-auto div{
-    padding: 7px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-    z-index: 2;
-
-}
-
-.navigation-auto{
-    position: absolute;
-    width: 100%;
-    display: flex;
-    margin-top: -40px;
-    justify-content: center;
-}
-
-.navigation-auto div:hover {
-    background: rgba(255, 255, 255, 0.35);
-}
-
-.navigation-auto div.manual-btn:not(:last-child){
-
-    margin-right: 20px;
-
-}
-#radio1:checked ~ .navigation-auto .auto-btn1,
-#radio2:checked ~ .navigation-auto .auto-btn2,
-#radio3:checked ~ .navigation-auto .auto-btn3,
-#radio4:checked ~ .navigation-auto .auto-btn4,
-#radio5:checked ~ .navigation-auto .auto-btn5 {
-    background: #fff;
-    color: #000;
-}
-
-h1{
+.destaques h2{
     font-family: 'Orbitron', sans-serif;
-    font-size: 50px;
+    font-size: 25px;
+    color: #6b6969;
+    margin-bottom: 10vh;
     text-align: center;
-    margin-top: 250px;
-    color: #fff;
+    margin-top: 6vh;
+
+}
+.box-pacotes {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os pacotes quebrem para a próxima linha quando não couberem mais na largura do contêiner */
+    justify-content: space-between; /* Espaçamento igual entre os pacotes e no meio */
+    padding: 0 20px;
+ 
 }
 
-nav {
+.box {
+    width: 40%;
+    margin-bottom: 30px; /* Adiciona espaço entre as linhas de pacotes */
+    text-align: center; /* Alinha o texto centralmente dentro do box */
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #fff;
+}
+
+.box img{
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.box h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: #6b6969;
+    margin: 10px 0;
+}
+.box p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14.6px;
+    color: #6b6969;
+    margin: 10px 0;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    text-align: left;
+    color: #706f6fa5;
+}
+.box hr{
+    width: 50%;
+    margin: 10px auto;
+}
+
+.box button{
+    padding: 7px 10px;
+    border: 1px solid #aeacac;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+.box button:hover{
+    background-color: #d3d3d3;
+    color: white;
+    transition: 1s;
+}
+.box button a {
+    text-decoration: none;
+    color: #6b6969;
+    font-family: "Poppins", sans-serif;
+
+}
+
+section:nth-of-type(3){
+    background-image: url(../img/bg.jpg);
+    height: 300px;
+    
+}
+.parallax {
+    position: relative;
+    overflow: hidden;
+    /* Adiciona uma altura mínima para a seção */
+    min-height: 300px;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    
+}
+.parallax h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 23px;
+    color: #fff;
+    margin-top: 5vh;
+    text-align: center;
+    margin-bottom: 10vh;
+}
+.parallax p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 12vh;
+    text-align: center;
+   
+
+}
+.parallax hr{
+    width: 40%;
+    margin: 10px auto;
+
+}
+.parallax::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 650px;
-    background-color: rgba(0, 0, 0, 0.3); /* Cor de fundo semi-transparente */
-    z-index: 1; /* Para sobrepor a imagem */
+    height: 100%;
+    /* Adicione a cor do filtro desejada */
+    background-color: rgba(0, 0, 0, 0.738); /* Por exemplo, um filtro preto com 50% de opacidade */
+    /* Define o filtro desejado */
+     /* Aqui você pode ajustar o desfoque conforme necessário */
+    z-index: -1;
 }
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px; /* Ajuste conforme necessário */
+.pacotes h2{
+    font-family: '', sans-serif;
+    font-size: 25px;
+    color: #6b6969;
+    margin-bottom: 10vh;
+    text-align: center;
 }
-nav ul li {
-    margin: 0 15px;
+
+@media (max-width: 768px) {
+    .box {
+        width: 100%; /* Para telas menores, ocupa toda a largura disponível para garantir que haja apenas um pacote por linha */
+    }
 }
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
-nav ul li a:hover {
-    color: lightgray;
-}
-/* FIM MENU */
 
