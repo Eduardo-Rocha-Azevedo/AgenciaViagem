@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência Viagens</title>
+    <link rel="stylesheet" href="assets/css/menu.css">
+   
+</head>
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <h1>Agência de viagem</h1>
+            
+            <div class="menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Pacotes</a></li>
+                    <li><a href="/">Sobre</a></li>
+                    <li><a href="/">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+
+</header>
+<body>
+    <h1>Cadastro de Pacotes de Viagem</h1>
+    <form action="/submit_pacote" method="POST">
+        <label for="nome">Nome do Pacote:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="destino">Destino:</label><br>
+        <input type="text" id="destino" name="destino" required><br><br>
+
+        <label for="descricao">Descrição:</label><br>
+        <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="dataInicio">Data de Início:</label><br>
+        <input type="date" id="dataInicio" name="dataInicio" required><br><br>
+
+        <label for="dataTermino">Data de Término:</label><br>
+        <input type="date" id="dataTermino" name="dataTermino" required><br><br>
+
+        <label for="preco">Preço:</label><br>
+        <input type="number" id="preco" name="preco" step="0.01" required><br><br>
+
+        <label for="inclusoes">Inclusões:</label><br>
+        <textarea id="inclusoes" name="inclusoes" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="exclusoes">Exclusões:</label><br>
+        <textarea id="exclusoes" name="exclusoes" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
