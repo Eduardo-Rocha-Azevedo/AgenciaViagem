@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência Viagens</title>
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+</head>
+<body>
+    <header>
+        <nav>
+
+          <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <ul class="nav-list">
+            <li><a href="/">Início</a></li>
+            <li><a href="/pacotes">Pacotes</a></li>
+            <li><a href="/">Sobre</a></li>
+            <li><a href="/">Contato</a></li>
+          </ul>
+        </nav>
+    </header>
+
+   <th:block th:include="mensagemValidacao"></th:block>
+    <form method="post" action="/cadastrarPacote"> <h1>Cadastro de Pacotes de Viagens</h1>
+        
+        <div class="form-group">
+            <label for=""><b>Nome do pacote:</b></label><br>
+            <input type="text" class="form-control" value="" placeholder="Insira o nome do pacote" name="nome" required>
+            <small class="form-text text-muted"><i><br>* Utilize nomes e termos mais utilizados no mercado.</i></small>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for=""><b>Data de expiração:</b></label><br>
+                    <input type="date" value="" name="data" class="form-control" required />
+                    <small class="form-text text-muted"><i><br>* Data em que a vaga expira.</i></small>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for=""><b>Custo: R$ </b></label><br>
+                    <input type="number" pattern="^\d+(\.|\,)\d{2}$" value="" name="salario" class="form-control" placeholder="R$ 00,00" required />
+                    <small class="form-text text-muted"><i><br>* Utilize valores considerando vírgula e ponto.</i></small>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for=""><b>Descrição do pacote</b></label><br>
+            <textarea class="form-control" name="descricao" maxlength="254" rows="8" placeholder="Digite aqui..." required></textarea>
+            <small class="form-text text-muted"><i><br>* Breve resumo do pacote oferecido.</i></small>
+        </div>
+
+        <button type="submit" class="btn btn-success">Adicionar Pacote</button>
+
+    </form>
+  <footer>
+        <h2>Agência de Viagens</h2>
+        <p>© 2024 Agência de Viagens. Todos os direitos reservados.</p>
+    </footer>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/MobileMenu.js"></script>
+</body>
+</html>
