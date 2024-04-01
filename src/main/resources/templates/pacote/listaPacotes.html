@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>| Agência de Viagens</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/menu.css">
+	<link rel="stylesheet" href="assets/css/listPacotes.css">
+</head>
+
+<body>
+	<header>
+		<nav>
+
+			<div class="mobile-menu">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+			<ul class="nav-list">
+				<li><a href="/">Início</a></li>
+				<li><a href="/pacotes">Pacotes</a></li>
+				<li><a href="/cadastrarPacote">Cadastrar Pacotes</a></li>
+				<li><a href="#">Sobre</a></li>
+				<li><a href="#">Contato</a></li>
+			</ul>
+		</nav>
+	</header>
+	<h1>Confira os nossos pacotes</h1>
+	<div class="container">
+
+
+
+		<br>
+
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">Nome do pacote:</th>
+					<th scope="col">Descrição:</th>
+					<th scope="col">Custo:</th>
+					<th scope="col">Expira:</th>
+					<th scope="col"></th>
+					<th scope="col">Ações:</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="pacote : ${pacotes}">
+					<td><img th:src="@{data:image/png;base64,${#strings.encodeBase64(pacote.imagem)}}" alt="Imagem do Pacote"></td>
+
+					<td><a th:href="${(#mvc.url('PC#detalhesPacote').arg(0, pacote.codigo)).build()}"><span th:text="${pacote.nome}"></span></a></td>
+						
+					<td th:text="${pacote.descricao}"><span></span></td>
+					<td>R$ <span th:text="${pacote.preco}"></span></td>
+					<td><span th:text="${pacote.data}"></span></td>
+					<td><a><button type="button" class="btn btn-danger">Excluir</button></a></td>
+					<td><a><button type="button" class="btn btn-primary">Editar</button></a></td>
+					<td><a><button type="button" class="btn btn-success">Adicionar candidato</button></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/MobileMenu.js"></script>

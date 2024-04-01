@@ -20,14 +20,15 @@
           <ul class="nav-list">
             <li><a href="/">Início</a></li>
             <li><a href="/pacotes">Pacotes</a></li>
-            <li><a href="/">Sobre</a></li>
-            <li><a href="/">Contato</a></li>
+            <li><a href="/cadastrarPacote">Cadastrar Pacotes</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
           </ul>
         </nav>
     </header>
 
    <th:block th:include="mensagemValidacao"></th:block>
-    <form method="post" action="/cadastrarPacote"> <h1>Cadastro de Pacotes de Viagens</h1>
+    <form method="post" action="/cadastrarPacote" enctype="multipart/form-data"> <h1>Cadastro de Pacotes de Viagens</h1>
         
         <div class="form-group">
             <label for=""><b>Nome do pacote:</b></label><br>
@@ -57,6 +58,8 @@
             <textarea class="form-control" name="descricao" maxlength="254" rows="8" placeholder="Digite aqui..." required></textarea>
             <small class="form-text text-muted"><i><br>* Breve resumo do pacote oferecido.</i></small>
         </div>
+        <input type="file" name="imagem" accept="image/*">
+
 
         <button type="submit" class="btn btn-success">Adicionar Pacote</button>
 

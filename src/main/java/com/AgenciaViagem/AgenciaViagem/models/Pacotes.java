@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -18,11 +20,22 @@ public class Pacotes {
     private String descricao;
     private LocalDate dataInicio;
     private LocalDate dataTermino;
+    private LocalDate data;
     private BigDecimal preco;
     private String inclusoes;
     private String exclusoes;
-
+    
+    @Lob
+    private byte[] imagem;
     // Getters e Setters
+
+    public LocalDate getData() {
+        return this.data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
 
     public Long getId() {
         return id;
@@ -104,5 +117,7 @@ public class Pacotes {
     public void setExclusoes(String exclusoes) {
         this.exclusoes = exclusoes;
     }
-
+    public void setImagem(byte[] imagem) {
+        this.imagem = imagem;
+    }
 }
